@@ -56,4 +56,4 @@ def get_game(latitude: float, longitude: float):
             "home_broadcasts": market_home,
             "national_broadcasts": market_national
         }
-    return {"latitude": latitude, "longitude": longitude}
+    
