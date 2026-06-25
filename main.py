@@ -48,12 +48,8 @@ def get_game(latitude: float, longitude: float):
                 market_national.extend(broadcast["names"])
         is_blacked_out = "NYY" in blackouts["teams"]
         
-        if "NYY" in blackouts["teams"]:
-            market_national = [
-            name for name in market_national
-            if "mlb.tv" not in name.lower() and "mlb network" not in name.lower()
-    ]
-            market_national.remove("MLB.TV")  
+        if "NYY" in blackouts["teams"]  and ("MLB.TV" in market_national or "MLB Net" in market_national):
+                market_national.remove("MLB.TV")  
         return {
             "away_team": away_team,
             "home_team": home_team,
